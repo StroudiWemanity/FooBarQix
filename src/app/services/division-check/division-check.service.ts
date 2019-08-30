@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DivisionCheckService {
-
-  constructor() { }
+  public turn3IntoFoo(entry: number): string {
+    return entry % 3 === 0 ? 'Foo' : '';
+  }
 }
