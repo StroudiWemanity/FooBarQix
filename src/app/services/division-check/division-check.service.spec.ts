@@ -30,4 +30,13 @@ describe('DivisionCheckService', () => {
     expect(service.turn7IntoQix(21)).toBe('Qix');
     expect(service.turn7IntoQix(20)).not.toBe('Qix');
   });
+
+  it(`should be able to combine all the above`, () => {
+    const service: DivisionCheckService = TestBed.get(DivisionCheckService);
+    expect(service.turnAll(7)).toBe('Qix');
+    expect(service.turnAll(15)).toBe('FooBar');
+    expect(service.turnAll(21)).toBe('FooQix');
+    expect(service.turnAll(105)).toBe('FooBarQix');
+    expect(service.turnAll(13)).toBe('');
+  });
 });
