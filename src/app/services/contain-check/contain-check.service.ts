@@ -23,4 +23,14 @@ export class ContainCheckService {
     });
     return contentString;
   }
+
+  public turn7IntoQixs(entry: number): string {
+    let contentString = '';
+    entry.toString().split('').map((char: string) => {
+      if (char === '7') {
+        contentString += 'Qix';
+      }
+    });
+    return contentString;
+  }
 }
