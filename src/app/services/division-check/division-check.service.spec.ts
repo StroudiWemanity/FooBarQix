@@ -23,4 +23,11 @@ describe('DivisionCheckService', () => {
     expect(service.turn5IntoBar(10)).toBe('Bar');
     expect(service.turn5IntoBar(12)).not.toBe('Bar');
   });
+
+  it(`should return 'Qix' when entry is divisible by 7`, () => {
+    const service: DivisionCheckService = TestBed.get(DivisionCheckService);
+    expect(service.turn7IntoQix(7)).toBe('Qix');
+    expect(service.turn7IntoQix(21)).toBe('Qix');
+    expect(service.turn7IntoQix(20)).not.toBe('Qix');
+  });
 });
