@@ -13,4 +13,14 @@ export class ContainCheckService {
     });
     return contentString;
   }
+
+  public turn5IntoBars(entry: number): string {
+    let contentString = '';
+    entry.toString().split('').map((char: string) => {
+      if (char === '5') {
+        contentString += 'Bar';
+      }
+    });
+    return contentString;
+  }
 }
