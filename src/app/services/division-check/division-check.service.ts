@@ -15,4 +15,8 @@ export class DivisionCheckService {
   public turn7IntoQix(entry: number): string {
     return entry % 7 === 0 ? 'Qix' : '';
   }
+
+  public turnAll(entry: number): string {
+    return this.turn3IntoFoo(entry) + this.turn5IntoBar(entry) + this.turn7IntoQix(entry);
+  }
 }
