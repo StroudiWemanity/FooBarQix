@@ -4,32 +4,25 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ContainCheckService {
-  public turn3IntoFoos(entry: number): string {
-    let contentString = '';
-    entry.toString().split('').map((char: string) => {
-      if (char === '3') {
-        contentString += 'Foo';
-      }
-    });
-    return contentString;
+  private static turn3IntoFoo(entry: string): string {
+    return entry === '3' ? 'Foo' : '';
   }
 
-  public turn5IntoBars(entry: number): string {
-    let contentString = '';
-    entry.toString().split('').map((char: string) => {
-      if (char === '5') {
-        contentString += 'Bar';
-      }
-    });
-    return contentString;
+  private static turn5IntoBar(entry: string): string {
+    return entry === '5' ? 'Bar' : '';
   }
 
-  public turn7IntoQixs(entry: number): string {
+  private static turn7IntoQix(entry: string): string {
+    return entry === '7' ? 'Qix' : '';
+  }
+
+  public turnAll(entry: number): string {
     let contentString = '';
     entry.toString().split('').map((char: string) => {
-      if (char === '7') {
-        contentString += 'Qix';
-      }
+      contentString +=
+        ContainCheckService.turn3IntoFoo(char) +
+        ContainCheckService.turn5IntoBar(char) +
+        ContainCheckService.turn7IntoQix(char);
     });
     return contentString;
   }
