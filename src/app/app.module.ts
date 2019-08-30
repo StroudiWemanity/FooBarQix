@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import {DivisionCheckService} from './services/division-check/division-check.service';
+import {ContainCheckService} from './services/contain-check/contain-check.service';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,10 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    DivisionCheckService,
+    ContainCheckService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

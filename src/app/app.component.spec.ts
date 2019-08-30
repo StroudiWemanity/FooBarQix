@@ -18,33 +18,41 @@ describe('AppComponent', () => {
 });
 
 describe('compute function', () => {
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        AppComponent
+      ]
+    }).compileComponents();
+  }));
+
   it(`should compute '3' into 'FooFoo'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.compute(3)).toContain('FooFoo');
+    expect(app.compute(3)).toBe('FooFoo');
   });
 
   it(`should compute '7' into 'QixQix'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.compute(7)).toContain('QixQix');
+    expect(app.compute(7)).toBe('QixQix');
   });
 
   it(`should compute '15' into 'FooBarBar'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.compute(15)).toContain('FooBarBar');
+    expect(app.compute(15)).toBe('FooBarBar');
   });
 
   it(`should compute '51' into 'FooBar'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.compute(51)).toContain('FooBar');
+    expect(app.compute(51)).toBe('FooBar');
   });
 
   it(`should not compute '8' into something else`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.compute(8)).toContain('8');
+    expect(app.compute(8)).toBe('8');
   });
 });
