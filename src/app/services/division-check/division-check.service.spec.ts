@@ -16,4 +16,11 @@ describe('DivisionCheckService', () => {
     expect(service.turn3IntoFoo(6)).toBe('Foo');
     expect(service.turn3IntoFoo(8)).not.toBe('Foo');
   });
+
+  it(`should return 'Bar' when entry is divisible by 5`, () => {
+    const service: DivisionCheckService = TestBed.get(DivisionCheckService);
+    expect(service.turn5IntoBar(5)).toBe('Bar');
+    expect(service.turn5IntoBar(10)).toBe('Bar');
+    expect(service.turn5IntoBar(12)).not.toBe('Bar');
+  });
 });
