@@ -33,4 +33,12 @@ describe('ContainCheckService', () => {
     expect(service.turnAll(77)).toBe('QixQix');
     expect(service.turnAll(10)).not.toBe('Qix');
   });
+
+  it(`should return '*' for each 0 entry contains`, () => {
+    const service: ContainCheckService = TestBed.get(ContainCheckService);
+    expect(service.turnAll(10)).toBe('*');
+    expect(service.turnAll(100)).toBe('**');
+    expect(service.turnAll(101)).toBe('*');
+    expect(service.turnAll(46)).not.toBe('*');
+  });
 });
