@@ -8,6 +8,10 @@ import {DivisionCheckService} from './services/division-check/division-check.ser
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  public turn0intoStars(entry: string): string {
+    return entry.replace(/0/g, '*');
+  }
+
   constructor(
     private divCheck: DivisionCheckService,
     private contCheck: ContainCheckService
@@ -16,7 +20,7 @@ export class AppComponent {
   public compute(entry: number): string {
     let result = this.divCheck.turnAll(entry) + this.contCheck.turnAll(entry);
     result = this.filterStars(result);
-    return result ? result : entry.toString();
+    return result ? result : this.turn0intoStars(entry.toString());
   }
 
   public filterStars(entry: string): string {
