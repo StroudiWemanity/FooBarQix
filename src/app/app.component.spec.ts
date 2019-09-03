@@ -80,4 +80,10 @@ describe('compute function', () => {
     expect(app.compute(105)).toBe('FooBarQix*Bar');
   });
 
+  it(`should filter a '*' only result into numbers and stars`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.filterStars('**')).toBe('');
+  });
+
 });
