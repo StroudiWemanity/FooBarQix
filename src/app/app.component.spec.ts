@@ -89,9 +89,9 @@ describe('compute function', () => {
   it(`should replace 0 by stars in pure numbers entries`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.filterStars('101')).toBe('1*1');
-    expect(app.filterStars('208')).toBe('2*8');
-    expect(app.filterStars('100')).toBe('1**');
+    expect(app.turn0intoStars('101')).toBe('1*1');
+    expect(app.turn0intoStars('208')).toBe('2*8');
+    expect(app.turn0intoStars('100')).toBe('1**');
   });
 
 });
