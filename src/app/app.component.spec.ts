@@ -55,4 +55,29 @@ describe('compute function', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app.compute(8)).toBe('8');
   });
+
+  it(`should compute 0 into '*'`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.compute(0)).toBe('*');
+  });
+
+  it(`should compute 101 into '1*1'`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.compute(101)).toBe('1*1');
+  });
+
+  it(`should compute 303 into 'FooFoo*Foo'`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.compute(303)).toBe('FooFoo*Foo');
+  });
+
+  it(`should compute 105 into 'FooBarQix*Bar'`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.compute(105)).toBe('FooBarQix*Bar');
+  });
+
 });
