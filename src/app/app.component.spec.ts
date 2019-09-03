@@ -56,10 +56,10 @@ describe('compute function', () => {
     expect(app.compute(8)).toBe('8');
   });
 
-  it(`should compute 0 into '*'`, () => {
+  it(`should compute 0 into 'FooBarQix*'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.compute(0)).toBe('*');
+    expect(app.compute(0)).toBe('FooBarQix*');
   });
 
   it(`should compute 101 into '1*1'`, () => {

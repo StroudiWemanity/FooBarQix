@@ -14,8 +14,12 @@ export class AppComponent {
   ) {}
 
   public compute(entry: number): string {
-    const result = this.divCheck.turnAll(entry) + this.contCheck.turnAll(entry);
+    let result = this.divCheck.turnAll(entry) + this.contCheck.turnAll(entry);
+    result = this.filterStars(result);
     return result ? result : entry.toString();
   }
 
+  public filterStars(entry: string): string {
+    return entry.match(/^\*+$/) ? '' : entry;
+  }
 }
